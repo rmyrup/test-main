@@ -1,0 +1,3 @@
+[submodule "separate-project"]
+	path = separate-project
+	url = https://github.com/rmyrup/test-separate-project.git
