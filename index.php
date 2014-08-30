@@ -14,11 +14,17 @@ echo "\n\n";
 
 <?php if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') { ?>
 	<hr />
-	<pre><?php phpinfo(); ?></pre>
-<?php } else {
-		throw new Exception('not ssl');
-	}
-?>
+	<pre><?php print_r($_SERVER); ?></pre>
+<?php } else { ?>
+<p>Changing to SSL in 3 seconds...</p>
+<script type="text/javascript">
+setTimeout(goSSL, 3000);
 
+function goSSL()
+{
+	window.location.href = 'https://dev60/index.php';
+}
+</script>
+<?php } ?>
 </body>
 </html>
